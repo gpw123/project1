@@ -1,6 +1,6 @@
 # project1
 用于中级实训提交
-
+```
 <?xml version="1.9.14" encoding="UTF-8"?>
 <project name="Hello" basedir=".">
 <property name="src" value="src"/>
@@ -20,6 +20,7 @@
 <!-- 删除一个文件夹 -->
 <delete dir="${dest}"/>
 </target>
+```
 ## 1. Vim编辑器学习
 
 1. Vi是linux系统下的标准编辑器，以字体颜色辨别语法的正确性，方便程序设计。Vim是Vi的升级版本，可以依据文件扩展名或文件内的开头信息，判断文件内容并自动地执行该程序的语法判断式，再以颜色显示程序代码与一般信息。
