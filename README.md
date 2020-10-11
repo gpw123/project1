@@ -20,6 +20,33 @@
 <!-- 删除一个文件夹 -->
 <delete dir="${dest}"/>
 </target>
+
+<!-- 编译src目录下的java源程序，依赖init引用 -->
+<target name="compile" depends="init">
+<!-- 编译src目录下的源程序，编译到dest引用下,包涵ant的运行时 -->
+<javac srcdir="${src}" destdir="${dest}" includeantruntime="on"/>
+</target>
+
+<!-- 运行java文件，在运行之前先删除一下classes的文件 -->
+<target name="runfile" depends="del,compile">
+
+<!-- classname="源程序的包"，classpath=“引用dest的目录”-->
+<java classname="com.test.Hello" classpath="${dest}"/>
+</target>
+
+<!-- 把classes目录下的文件打包成一个jar -->
+<target name="jar" depends="compile">
+
+<!-- 打包的名字，打包到那个目录下 -->
+<jar jarfile="${jfile}" basedir="${dest}"/>
+</target>
+
+<!-- 运行一个jar文件 -->
+<target name="runjar" depends="jar">
+
+<java classname="com.test.Hello" classpath="${jfile}"/>
+</target>
+
 ```
 ## 1. Vim编辑器学习
 
